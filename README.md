@@ -36,3 +36,27 @@ app.py를 통해 결과를 전송할 수 있다.
   * 지역명을 입력변수로 받아 인구구조(나이, 성별)를 분석한다.
   * 데이터출처 : 행정안전부(https://mois.go.kr)
   * 데이터는 2020년 12월 기준이다.
+
+
+### Titanic
+
+* 캐글에 있는 타이타닉 데이터(https://www.kaggle.com/c/titanic)를 이용해 생존자를 예측한다.
+
+* 변수 설명
+ * PassengerId : 승객 고유번호
+ * Survived : 생존여부(0 = dead, 1 = alive)
+ * Pclass : 티켓 등급
+ * Sex : 성별
+ * Age : 나이
+ * SisSp : 동승한 형제자매/배우자 수
+ * Parch : 동승한 부모/자식 수
+ * Ticket : 티켓 번호
+ * Fare : 탑승 요금
+ * Cabin : 선실 호수
+ * Embarked : 탑승 장소
+
+* 데이터 전처리 : 생존여부와 직결되지 않는 변수는 제거하고, 결측값은 평균, 최빈값 등으로 대체한다.
+
+* 데이터 예측 : GridSearchCV를 이용해 의사결정나무와 로지스틱회귀 중 최적의 파라미터를 찾는다.
+
+* best_estimator_로 테스트 데이터셋을 예측한 accuracy 약 0.744로 나쁘지 않은 결과이다.
